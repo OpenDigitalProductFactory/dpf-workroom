@@ -1,0 +1,24 @@
+{
+  "name": "@opendigitalproductfactory/dpf-workroom",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable Workroom graph, marking and receipt kernel",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenDigitalProductFactory/dpf-workroom.git"
+  },
+  "engines": {
+    "node": "24.16.0"
+  },
+  "scripts": {
+    "verify:source": "node scripts/verify-provenance.mjs",
+    "test": "node examples/workroom-kernel/run.mjs",
+    "check": "npm run verify:source && npm test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "component": "dpf-workroom",
+  "stage": "seeded extraction candidate",
+  "componentMaintainer": "OpenDigitalProductFactory maintainers",
+  "runtimeDependencies": {},
+  "sharedFrozenSources": [
+    {
+      "path": "packages/validators/src/action-result.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/workroom/flow-graph.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/workroom/marking.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/workroom/receipts.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/workroom/index.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/gpp/element-ids.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/gpp/diagnostics.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/gpp/executable-constructs.ts",
+      "alsoUsedBy": [
+        "dpf-gpp",
+        "dpf-workroom-policy"
+      ]
+    },
+    {
+      "path": "packages/validators/src/gpp/constructs-used-by.ts",
+      "alsoUsedBy": [
+        "dpf-gpp"
+      ]
+    }
+  ],
+  "sharedSourcePolicy": "Upstream revision remains the owner of shared meanings during bootstrap. Shared snapshots are not separately editable forks. Before the first consuming release, assign each shared responsibility one canonical package owner, prove cross-package compatibility, replace snapshots with exact versioned dependencies, and remove the displaced snapshots in the same migration. No automatic extraction of another service.",
+  "consumerMigration": {
+    "DPF": "existing consumers remain unchanged until explicit compatibility migration",
+    "DPF2": "existing frozen graph/schema absorption unchanged; Linux appliance remains destination consumer"
+  },
+  "releaseCondition": "Standalone checks, actual consumer acceptance, shared-source retirement and release/maintenance ownership must be recorded before a consuming release."
+}

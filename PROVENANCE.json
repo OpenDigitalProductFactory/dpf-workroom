@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "component": "dpf-workroom",
+  "sourceRepository": "https://github.com/OpenDigitalProductFactory/opendigitalproductfactory",
+  "sourceRevision": "56f3a5d2d57d751eb3ac435dcca4133c5ff46686",
+  "mergedPR": "https://github.com/OpenDigitalProductFactory/opendigitalproductfactory/pull/6724",
+  "license": "Apache-2.0",
+  "qualification": "Synthetic protocol fixture only; no execution, authentication, enforcement or business qualification.",
+  "publication": "public source seed; no package release or consumer acceptance",
+  "files": [
+    {
+      "path": "LICENSE",
+      "upstreamPath": "LICENSE",
+      "gitBlob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "NOTICE",
+      "upstreamPath": "NOTICE",
+      "gitBlob": "54507a7c56acd4bcba6868607038f1db6b4e1da4",
+      "sha256": "edca2f3be891d8dc17e077eee49e979fd8348ae50eb6cba7700257ce87e5f650",
+      "bytes": 569,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/_shared/read-regular-file.mjs",
+      "upstreamPath": "examples/_shared/read-regular-file.mjs",
+      "gitBlob": "c07131eb8b93407b1eb392085e9d927f1440fe2d",
+      "sha256": "cc3b57089dd6d732706b7651a9d3a6ca586c6c2b02adc9db5d3226d96993e5f3",
+      "bytes": 797,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/LICENSE",
+      "upstreamPath": "examples/workroom-kernel/LICENSE",
+      "gitBlob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/NOTICE",
+      "upstreamPath": "examples/workroom-kernel/NOTICE",
+      "gitBlob": "54507a7c56acd4bcba6868607038f1db6b4e1da4",
+      "sha256": "edca2f3be891d8dc17e077eee49e979fd8348ae50eb6cba7700257ce87e5f650",
+      "bytes": 569,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/README.md",
+      "upstreamPath": "examples/workroom-kernel/README.md",
+      "gitBlob": "09f3ed0e2082f67801282e305b5f282ce4992df4",
+      "sha256": "e4cbd9a8ba032bb3cf766c5013a197c7f674204cf8c0faf4957f537992bf64c8",
+      "bytes": 6724,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/closure.json",
+      "upstreamPath": "examples/workroom-kernel/closure.json",
+      "gitBlob": "cbbae07e3c902d14c845545b5ea52bbfa9544650",
+      "sha256": "72cf632f6957b0fea5d7373a196b186b36dd8e13f6420fdc9c5746193b539a2c",
+      "bytes": 859,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/run.mjs",
+      "upstreamPath": "examples/workroom-kernel/run.mjs",
+      "gitBlob": "1fcf81cf15c7b436661586f3b21665964b7ce45c",
+      "sha256": "3b73c735ef1ece604b240f2560261e2aee743afafcac1b52dc5f4596aa4ff229",
+      "bytes": 3729,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/src/host.ts",
+      "upstreamPath": "examples/workroom-kernel/src/host.ts",
+      "gitBlob": "4283793d03a1e2ce92b5eeb718e10ed7582c15c7",
+      "sha256": "43602430c7bae777f6e78bcc1810523337f18d744ca04d3f4fcd591a9a459440",
+      "bytes": 16720,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/src/practices.ts",
+      "upstreamPath": "examples/workroom-kernel/src/practices.ts",
+      "gitBlob": "c29625f7bf4b4b1d751e9ec5a77d413cb39d0137",
+      "sha256": "b3f1dfc904906e32b66d7f4ac0d558f3700544de8a8f54388712abde508d4d9f",
+      "bytes": 2190,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/src/smoke.ts",
+      "upstreamPath": "examples/workroom-kernel/src/smoke.ts",
+      "gitBlob": "d1f48fa63ac23200f475428406996115295c8a61",
+      "sha256": "d366a1e7ed220ed80a68f9b5b261ae9dd59ac0cf66eb41064577e87ffbb0b58a",
+      "bytes": 15403,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "examples/workroom-kernel/tsconfig.json",
+      "upstreamPath": "examples/workroom-kernel/tsconfig.json",
+      "gitBlob": "09de590a54ffbcc5d612b0e5ab51c86029efa8da",
+      "sha256": "4fbe1dd841363106e6e91b557725f06d1273a3bf5a634f936c3aa1234bdc3ef3",
+      "bytes": 386,
+      "role": "component-source-or-example"
+    },
+    {
+      "path": "packages/validators/src/action-result.ts",
+      "upstreamPath": "packages/validators/src/action-result.ts",
+      "gitBlob": "e99c49f4b9e2134d6a3ffe3b64a112c08bef1a27",
+      "sha256": "49d54cec031b2e076f7701ed580394c580b152443a001dfd954da2872a437264",
+      "bytes": 2165,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/gpp/constructs-used-by.ts",
+      "upstreamPath": "packages/validators/src/gpp/constructs-used-by.ts",
+      "gitBlob": "ab662c121ed2d4ddd5e5f620290d236141382da2",
+      "sha256": "5fdfc8ca49acbf2238752556fee4fba95bae41fc33011c3c9c84fd996dda626f",
+      "bytes": 4434,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/gpp/diagnostics.ts",
+      "upstreamPath": "packages/validators/src/gpp/diagnostics.ts",
+      "gitBlob": "ae0ac35d7fa60da8ecec7682977b52668b9b26a5",
+      "sha256": "700b6de020fe0f2faae7ca68aa3cca967d8abfab82a33fdba2ca264a441ba854",
+      "bytes": 6410,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/gpp/element-ids.ts",
+      "upstreamPath": "packages/validators/src/gpp/element-ids.ts",
+      "gitBlob": "14bd0c4fff2570154a7805343bbe7b89a57d0595",
+      "sha256": "db60fdf48eea6c9f050b7c26604be94337ece8a18786f75819802d03e20e8837",
+      "bytes": 7556,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/gpp/executable-constructs.ts",
+      "upstreamPath": "packages/validators/src/gpp/executable-constructs.ts",
+      "gitBlob": "8e30c89e63bb77d934f1257679d5dd69a9bd81af",
+      "sha256": "7235b0b1127c475fd2edcb3255b4f8f143715aa853b19f1e7cfdb66e6bb4a323",
+      "bytes": 4966,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/workroom/flow-graph.ts",
+      "upstreamPath": "packages/validators/src/workroom/flow-graph.ts",
+      "gitBlob": "30b1648821b06b19701194ea313f0a74b0287a6f",
+      "sha256": "3c54bbc4d1c5ae9e191ce742a0048b72e8b8ce18661fa6e28d6aac528ccb1fbe",
+      "bytes": 10346,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/workroom/index.ts",
+      "upstreamPath": "packages/validators/src/workroom/index.ts",
+      "gitBlob": "7f3a628225c35c8a22664b737f7110f1ff75e088",
+      "sha256": "a8f16c505200b387d53f89248b6c21d2f4075823f77cf6560464fc3c643ad0b0",
+      "bytes": 184,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/workroom/marking.ts",
+      "upstreamPath": "packages/validators/src/workroom/marking.ts",
+      "gitBlob": "6047b71183ee937b7a2fa1f98f6cbdf558c4a4d4",
+      "sha256": "94329674f34c7efe9de93ec0d189f792a2a7f1b19336084e918a0259d0746077",
+      "bytes": 30771,
+      "role": "frozen-compatibility-dependency"
+    },
+    {
+      "path": "packages/validators/src/workroom/receipts.ts",
+      "upstreamPath": "packages/validators/src/workroom/receipts.ts",
+      "gitBlob": "d88bb0451512476a713fa58fbefdf897e6e467d7",
+      "sha256": "0354b7f0fdd90ecb3fedb459a99194642c9d0e0b01472a53a996f029e8c89dcc",
+      "bytes": 4263,
+      "role": "frozen-compatibility-dependency"
+    }
+  ]
+}
