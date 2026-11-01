@@ -1,6 +1,6 @@
 {
   "component": "dpf-workroom",
-  "stage": "seeded extraction candidate",
+  "stage": "private installed-artifact candidate; consumer cutover pending",
   "componentMaintainer": "OpenDigitalProductFactory maintainers",
   "runtimeDependencies": {},
   "sharedFrozenSources": [
@@ -72,5 +72,31 @@
     "DPF": "existing consumers remain unchanged until explicit compatibility migration",
     "DPF2": "existing frozen graph/schema absorption unchanged; Linux appliance remains destination consumer"
   },
-  "releaseCondition": "Standalone checks, actual consumer acceptance, shared-source retirement and release/maintenance ownership must be recorded before a consuming release."
+  "releaseCondition": "Standalone checks, actual consumer acceptance, shared-source retirement and release/maintenance ownership must be recorded before a consuming release.",
+  "canonicalOwnerDecision": {
+    "reference": "OpenDigitalProductFactory/opendigitalproductfactory#6797 / DI-7AF2A4D33ED0",
+    "assignedOwner": "dpf-workroom",
+    "responsibilities": [
+      "graph",
+      "marking",
+      "receipts",
+      "result",
+      "pure process identity, diagnostics and executable-construct leaves"
+    ],
+    "consumerCutover": "not yet delivered; existing DPF/DPF2 copies remain governed by their actual consumer migrations"
+  },
+  "artifactContract": {
+    "version": "0.1.0-candidate.0",
+    "format": "ESM with declarations",
+    "runtimeDependencies": [],
+    "publication": "private local candidate only",
+    "receivingProof": "npm run test:package installs a built tarball and runs the original synthetic protocol contracts; not product/native acceptance"
+  },
+  "nonOwnedFrozenSources": [
+    {
+      "path": "packages/validators/src/gpp/constructs-used-by.ts",
+      "assignedOwner": "dpf-gpp",
+      "disposition": "Excluded from emitted package/exports. Retain original source/provenance until the coordinated GPP dependency migration retires this unused snapshot."
+    }
+  ]
 }

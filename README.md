@@ -18,4 +18,38 @@ This repository owns the candidate component's evolution. The files remain in th
 
 See [MIGRATION.md](MIGRATION.md) for the transition and [CONTRIBUTING.md](CONTRIBUTING.md) for maintenance. Separate Git ownership does not imply another process, database, permission system or deployment. Company, Workroom, GPP/TAK, GAID/JSI, current admission and transactional effect/result owners retain their authority.
 
-Upstream qualification limit: Synthetic protocol fixture only; no execution, authentication, enforcement or business qualification.
+## Installed candidate contract
+
+`0.1.0-candidate.0` adds an ESM package build and declarations over the unchanged
+seeded kernel. It remains private and unpublished. `npm run build` emits the
+portable closure into `dist`; `npm pack` builds a local tarball. No DPF checkout,
+application boot, database, provider credential or runtime dependency is needed.
+
+The root export provides the graph, marking and receipt kernel. Supported
+subpaths are `flow-graph`, `marking`, `receipts`, `result`, and
+`process/{element-ids,diagnostics,executable-constructs}` under
+`@opendigitalproductfactory/dpf-workroom`. These exports resolve to the same
+implementation bodies. Source-layout and `dist` deep imports are sealed.
+`constructs-used-by` analysis belongs to GPP and is not emitted or exported by
+this package; its seeded provenance snapshot remains frozen pending migration.
+
+```js
+import { buildShapeFlowGraph, forwardReach } from "@opendigitalproductfactory/dpf-workroom";
+```
+
+`npm run test:package` packs the built candidate, installs it into a fresh
+temporary consumer, typechecks it with the pinned compiler, and runs all 13
+original ordinary/adverse protocol scenarios against the installed package.
+The receiver uses no kernel source copies, workspace aliases or package
+symlinks. The check also verifies public-export identity and the complete emitted
+runtime/declaration import closure. The build rewrites declaration import nodes
+to `.js`; original upstream source/provenance remains byte-identical.
+
+Supported build/receiving profile: Node 24.16.0, ESM/NodeNext and TypeScript 6.0.3.
+CommonJS, alternate runtimes/compiler versions, browser/native hosts, complete
+GPP schema/compiler behavior and production effects are not qualified here.
+The synthetic host demonstrates contracts; it does not enforce real OS, tenant,
+authentication or business authority.
+
+Upstream qualification limit: Synthetic protocol fixture and installed artifact
+contract only; no execution, authentication, enforcement or business qualification.
