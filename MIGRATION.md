@@ -10,7 +10,7 @@ These are migration obligations, not extra per-tool human approvals. Ordinary au
 
 ## Candidate adoption and rollback
 
-The `0.1.0-candidate.1` packaging slice changes exports/build output, not any
+The `0.1.0-candidate.2` packaging slice changes exports/build output, not any
 seeded domain source or its provenance. The canonical ownership selected in
 DPF's reviewed cutover plan (PR #6797, DI-7AF2A4D33ED0) places the graph,
 marking, receipts, result and pure process leaves here. GPP and scoped judgment
@@ -33,3 +33,9 @@ or migration and cannot authorize rewriting in-flight records or receipts.
 Component source/build review and DCO PR/CI happen in this repository. Actual
 DPF and DPF2 acceptance happens in each consumer's process. Local tarball checks
 are not release approval, installed-product acceptance, or native qualification.
+
+Candidate `.2` corrects only version/runtime-engine metadata: strict installation
+is supported on the two tested Node versions, 24.16.0 and 24.22.0. The build
+stays pinned to 24.16.0/TypeScript 6.0.3. Pure source/API semantics are unchanged;
+prior `.0` and `.1` archives remain immutable. The receiving matrix is Darwin
+arm64 and does not qualify a product, actual browser/CSP or Linux enforcement.

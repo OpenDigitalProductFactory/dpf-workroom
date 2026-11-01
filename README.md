@@ -20,7 +20,7 @@ See [MIGRATION.md](MIGRATION.md) for the transition and [CONTRIBUTING.md](CONTRI
 
 ## Installed candidate contract
 
-`0.1.0-candidate.1` adds an ESM package build and declarations over the unchanged
+`0.1.0-candidate.2` adds an ESM package build and declarations over the unchanged
 seeded kernel. It remains private and unpublished. `npm run build` emits the
 portable closure into `dist`; `npm pack` builds a local tarball. No DPF checkout,
 application boot, database, provider credential or runtime dependency is needed.
@@ -60,3 +60,9 @@ blob and SHA-256 are added to PROVENANCE.json; the original 21 entries remain
 unchanged. Installed tests preserve the closed vocabulary, distinguish waits and
 inconclusive results from verdicts/failures, and preserve retry posture.
 Candidate `.0` remains an immutable prior artifact, not an overwritten release.
+
+Candidate `.2` corrects only version/runtime-engine metadata: strict installation
+is supported on the two tested Node versions, 24.16.0 and 24.22.0. The build
+stays pinned to 24.16.0/TypeScript 6.0.3. Pure source/API semantics are unchanged;
+prior `.0` and `.1` archives remain immutable. The receiving matrix is Darwin
+arm64 and does not qualify a product, actual browser/CSP or Linux enforcement.

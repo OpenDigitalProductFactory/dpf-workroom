@@ -31,7 +31,7 @@ try {
   const consumer = join(temp, "consumer");
   await mkdir(join(consumer, "src"), { recursive: true });
   await writeFile(join(consumer, "package.json"), JSON.stringify({ name: "installed-workroom-consumer", private: true, type: "module" }));
-  run("npm", ["install", "--ignore-scripts", "--no-audit", "--no-fund", "--package-lock=false", tarball], consumer);
+  run("npm", ["install", "--engine-strict", "--ignore-scripts", "--no-audit", "--no-fund", "--package-lock=false", tarball], consumer);
   const installed = join(consumer, "node_modules", ...manifest.name.split("/"));
   assert(!(await lstat(installed)).isSymbolicLink(), "Receiver must install actual tarball content");
   for (const name of ["host.ts", "practices.ts", "smoke.ts"]) {

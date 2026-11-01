@@ -87,11 +87,15 @@
     "consumerCutover": "not yet delivered; existing DPF/DPF2 copies remain governed by their actual consumer migrations"
   },
   "artifactContract": {
-    "version": "0.1.0-candidate.1",
+    "version": "0.1.0-candidate.2",
     "format": "ESM with declarations",
     "runtimeDependencies": [],
     "publication": "private local candidate only",
-    "receivingProof": "npm run test:package installs a built tarball and runs the original synthetic protocol contracts; not product/native acceptance"
+    "receivingProof": "npm run test:package installs a built tarball and runs the original synthetic protocol contracts; not product/native acceptance",
+    "supportedNodeVersions": [
+      "24.16.0",
+      "24.22.0"
+    ]
   },
   "nonOwnedFrozenSources": [
     {
