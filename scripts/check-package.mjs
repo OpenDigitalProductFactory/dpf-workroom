@@ -49,6 +49,10 @@ try {
     + `import * as ids from '${manifest.name}/process/element-ids';\n`
     + `import {ok, err, type ActionResult} from '${manifest.name}/result';\n`
     + `const success:ActionResult<number>=ok(3); if(!success.ok || success.data!==3 || err('held').ok) throw new Error('Changed result contract');\n`
+    + `import {OUTCOME_DISPOSITIONS, RETRY_POSTURE, isVerdict, isNonVerdict, countsAsFailure, isOutcomeDisposition} from '${manifest.name}/outcome-disposition';\n`
+    + `if(JSON.stringify(OUTCOME_DISPOSITIONS)!==JSON.stringify(['proceed','awaiting-person','awaiting-input','inconclusive','refused'])) throw new Error('Changed disposition vocabulary');\n`
+    + `for(const state of ['awaiting-person','awaiting-input','inconclusive'] as const) if(isVerdict(state)||!isNonVerdict(state)||countsAsFailure(state)) throw new Error('Non-verdict became a verdict/failure');\n`
+    + `if(RETRY_POSTURE['awaiting-person']!=='never'||RETRY_POSTURE.inconclusive!=='same-input'||!countsAsFailure('refused')||isOutcomeDisposition('failed')) throw new Error('Changed retry or closed outcome semantics');\n`
     + `if(root.buildShapeFlowGraph !== graph.buildShapeFlowGraph || root.stepDriveMarking !== marking.stepDriveMarking || root.isCompletingWorkroomDriveReceiptAt !== receipts.isCompletingWorkroomDriveReceiptAt) throw new Error('Competing public implementations');\n`
     + `if(ids.stageElementId('verify') !== 'stage:verify') throw new Error('Changed durable element identity');\n`);
   await writeFile(join(consumer, "tsconfig.json"), JSON.stringify({ compilerOptions: {

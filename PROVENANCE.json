@@ -145,6 +145,14 @@
       "role": "frozen-compatibility-dependency"
     },
     {
+      "path": "packages/validators/src/outcome-disposition.ts",
+      "upstreamPath": "packages/validators/src/outcome-disposition.ts",
+      "gitBlob": "d03f16f5e8bfd271df4b3c74fc46ebc0ea3508f0",
+      "sha256": "5fbc64d38de9e49999c882c1da540b513885d2abfb6c3c964a260475128bf359",
+      "bytes": 4660,
+      "role": "canonical-foundation-contract"
+    },
+    {
       "path": "packages/validators/src/workroom/flow-graph.ts",
       "upstreamPath": "packages/validators/src/workroom/flow-graph.ts",
       "gitBlob": "30b1648821b06b19701194ea313f0a74b0287a6f",

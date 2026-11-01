@@ -20,13 +20,13 @@ See [MIGRATION.md](MIGRATION.md) for the transition and [CONTRIBUTING.md](CONTRI
 
 ## Installed candidate contract
 
-`0.1.0-candidate.0` adds an ESM package build and declarations over the unchanged
+`0.1.0-candidate.1` adds an ESM package build and declarations over the unchanged
 seeded kernel. It remains private and unpublished. `npm run build` emits the
 portable closure into `dist`; `npm pack` builds a local tarball. No DPF checkout,
 application boot, database, provider credential or runtime dependency is needed.
 
 The root export provides the graph, marking and receipt kernel. Supported
-subpaths are `flow-graph`, `marking`, `receipts`, `result`, and
+subpaths are `flow-graph`, `marking`, `receipts`, `result`, `outcome-disposition`, and
 `process/{element-ids,diagnostics,executable-constructs}` under
 `@opendigitalproductfactory/dpf-workroom`. These exports resolve to the same
 implementation bodies. Source-layout and `dist` deep imports are sealed.
@@ -53,3 +53,10 @@ authentication or business authority.
 
 Upstream qualification limit: Synthetic protocol fixture and installed artifact
 contract only; no execution, authentication, enforcement or business qualification.
+
+Candidate `.1` also extracts the existing import-free outcome-disposition
+contract assigned here by the reviewed ownership plan. Its original upstream
+blob and SHA-256 are added to PROVENANCE.json; the original 21 entries remain
+unchanged. Installed tests preserve the closed vocabulary, distinguish waits and
+inconclusive results from verdicts/failures, and preserve retry posture.
+Candidate `.0` remains an immutable prior artifact, not an overwritten release.

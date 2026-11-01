@@ -10,7 +10,7 @@ These are migration obligations, not extra per-tool human approvals. Ordinary au
 
 ## Candidate adoption and rollback
 
-The `0.1.0-candidate.0` packaging slice changes exports/build output, not any
+The `0.1.0-candidate.1` packaging slice changes exports/build output, not any
 seeded domain source or its provenance. The canonical ownership selected in
 DPF's reviewed cutover plan (PR #6797, DI-7AF2A4D33ED0) places the graph,
 marking, receipts, result and pure process leaves here. GPP and scoped judgment

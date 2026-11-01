@@ -1,20 +1,55 @@
 {
   "name": "@opendigitalproductfactory/dpf-workroom",
-  "version": "0.1.0-candidate.0",
+  "version": "0.1.0-candidate.1",
   "private": true,
   "type": "module",
   "types": "./dist/workroom/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/workroom/index.d.ts", "import": "./dist/workroom/index.js" },
-    "./flow-graph": { "types": "./dist/workroom/flow-graph.d.ts", "import": "./dist/workroom/flow-graph.js" },
-    "./marking": { "types": "./dist/workroom/marking.d.ts", "import": "./dist/workroom/marking.js" },
-    "./receipts": { "types": "./dist/workroom/receipts.d.ts", "import": "./dist/workroom/receipts.js" },
-    "./result": { "types": "./dist/action-result.d.ts", "import": "./dist/action-result.js" },
-    "./process/element-ids": { "types": "./dist/gpp/element-ids.d.ts", "import": "./dist/gpp/element-ids.js" },
-    "./process/diagnostics": { "types": "./dist/gpp/diagnostics.d.ts", "import": "./dist/gpp/diagnostics.js" },
-    "./process/executable-constructs": { "types": "./dist/gpp/executable-constructs.d.ts", "import": "./dist/gpp/executable-constructs.js" }
+    ".": {
+      "types": "./dist/workroom/index.d.ts",
+      "import": "./dist/workroom/index.js"
+    },
+    "./flow-graph": {
+      "types": "./dist/workroom/flow-graph.d.ts",
+      "import": "./dist/workroom/flow-graph.js"
+    },
+    "./marking": {
+      "types": "./dist/workroom/marking.d.ts",
+      "import": "./dist/workroom/marking.js"
+    },
+    "./receipts": {
+      "types": "./dist/workroom/receipts.d.ts",
+      "import": "./dist/workroom/receipts.js"
+    },
+    "./result": {
+      "types": "./dist/action-result.d.ts",
+      "import": "./dist/action-result.js"
+    },
+    "./process/element-ids": {
+      "types": "./dist/gpp/element-ids.d.ts",
+      "import": "./dist/gpp/element-ids.js"
+    },
+    "./process/diagnostics": {
+      "types": "./dist/gpp/diagnostics.d.ts",
+      "import": "./dist/gpp/diagnostics.js"
+    },
+    "./process/executable-constructs": {
+      "types": "./dist/gpp/executable-constructs.d.ts",
+      "import": "./dist/gpp/executable-constructs.js"
+    },
+    "./outcome-disposition": {
+      "types": "./dist/outcome-disposition.d.ts",
+      "import": "./dist/outcome-disposition.js"
+    }
   },
-  "files": ["dist", "LICENSE", "PROVENANCE.json", "DEPENDENCY-BOUNDARY.json", "MIGRATION.md", "examples/workroom-kernel/NOTICE"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "PROVENANCE.json",
+    "DEPENDENCY-BOUNDARY.json",
+    "MIGRATION.md",
+    "examples/workroom-kernel/NOTICE"
+  ],
   "description": "Portable Workroom graph, marking and receipt kernel",
   "license": "Apache-2.0",
   "repository": {

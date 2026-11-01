@@ -81,12 +81,13 @@
       "marking",
       "receipts",
       "result",
-      "pure process identity, diagnostics and executable-construct leaves"
+      "pure process identity, diagnostics and executable-construct leaves",
+      "outcome-disposition contract"
     ],
     "consumerCutover": "not yet delivered; existing DPF/DPF2 copies remain governed by their actual consumer migrations"
   },
   "artifactContract": {
-    "version": "0.1.0-candidate.0",
+    "version": "0.1.0-candidate.1",
     "format": "ESM with declarations",
     "runtimeDependencies": [],
     "publication": "private local candidate only",
