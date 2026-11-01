@@ -10,7 +10,7 @@ These are migration obligations, not extra per-tool human approvals. Ordinary au
 
 ## Candidate adoption and rollback
 
-The `0.1.0-candidate.2` packaging slice changes exports/build output, not any
+The `0.1.0-candidate.3` packaging slice changes exports/build output, not any
 seeded domain source or its provenance. The canonical ownership selected in
 DPF's reviewed cutover plan (PR #6797, DI-7AF2A4D33ED0) places the graph,
 marking, receipts, result and pure process leaves here. GPP and scoped judgment
@@ -39,3 +39,12 @@ is supported on the two tested Node versions, 24.16.0 and 24.22.0. The build
 stays pinned to 24.16.0/TypeScript 6.0.3. Pure source/API semantics are unchanged;
 prior `.0` and `.1` archives remain immutable. The receiving matrix is Darwin
 arm64 and does not qualify a product, actual browser/CSP or Linux enforcement.
+
+Candidate `.3` adds an explicit `require` export condition pointing to the same
+emitted ESM files as `import`. DPF’s framework TypeScript source hook uses
+CommonJS resolution, which `.2` correctly exposed as unsupported during actual
+integration. Clean installed tests now require every public subpath and compare
+each exported value with native ESM import identity. Node24’s synchronous ESM
+loading is the supported compatibility path; no second implementation or
+CommonJS bundle is emitted. Domain source/provenance and durable semantics are
+unchanged. Prior candidates remain immutable.

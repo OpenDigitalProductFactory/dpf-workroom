@@ -20,7 +20,7 @@ See [MIGRATION.md](MIGRATION.md) for the transition and [CONTRIBUTING.md](CONTRI
 
 ## Installed candidate contract
 
-`0.1.0-candidate.2` adds an ESM package build and declarations over the unchanged
+`0.1.0-candidate.3` adds an ESM package build and declarations over the unchanged
 seeded kernel. It remains private and unpublished. `npm run build` emits the
 portable closure into `dist`; `npm pack` builds a local tarball. No DPF checkout,
 application boot, database, provider credential or runtime dependency is needed.
@@ -46,8 +46,8 @@ runtime/declaration import closure. The build rewrites declaration import nodes
 to `.js`; original upstream source/provenance remains byte-identical.
 
 Supported build/receiving profile: Node 24.16.0, ESM/NodeNext and TypeScript 6.0.3.
-CommonJS, alternate runtimes/compiler versions, browser/native hosts, complete
-GPP schema/compiler behavior and production effects are not qualified here.
+Alternate runtimes/compiler versions, browser/native hosts, complete GPP
+schema/compiler behavior and production effects are not qualified here.
 The synthetic host demonstrates contracts; it does not enforce real OS, tenant,
 authentication or business authority.
 
@@ -66,3 +66,12 @@ is supported on the two tested Node versions, 24.16.0 and 24.22.0. The build
 stays pinned to 24.16.0/TypeScript 6.0.3. Pure source/API semantics are unchanged;
 prior `.0` and `.1` archives remain immutable. The receiving matrix is Darwin
 arm64 and does not qualify a product, actual browser/CSP or Linux enforcement.
+
+Candidate `.3` adds an explicit `require` export condition pointing to the same
+emitted ESM files as `import`. DPF’s framework TypeScript source hook uses
+CommonJS resolution, which `.2` correctly exposed as unsupported during actual
+integration. Clean installed tests now require every public subpath and compare
+each exported value with native ESM import identity. Node24’s synchronous ESM
+loading is the supported compatibility path; no second implementation or
+CommonJS bundle is emitted. Domain source/provenance and durable semantics are
+unchanged. Prior candidates remain immutable.

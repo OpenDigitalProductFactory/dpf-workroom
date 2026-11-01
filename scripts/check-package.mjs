@@ -32,6 +32,23 @@ try {
   await mkdir(join(consumer, "src"), { recursive: true });
   await writeFile(join(consumer, "package.json"), JSON.stringify({ name: "installed-workroom-consumer", private: true, type: "module" }));
   run("npm", ["install", "--engine-strict", "--ignore-scripts", "--no-audit", "--no-fund", "--package-lock=false", tarball], consumer);
+  // Node's CommonJS source loaders must select the same synchronous ESM
+  // distribution as native imports, never another implementation or a deep path.
+  const commonJsProgram = `
+    const assert = require('node:assert/strict');
+    (async () => {
+      for (const specifier of ${JSON.stringify(Object.keys(manifest.exports).map(key => manifest.name + (key === "." ? "" : key.slice(1))))}) {
+        const loaded = require(specifier);
+        const imported = await import(specifier);
+        assert.deepEqual(Object.keys(loaded).sort(), Object.keys(imported).sort());
+        for (const key of Object.keys(imported)) assert.equal(loaded[key], imported[key], specifier + ':' + key);
+      }
+      for (const path of ['${manifest.name}/dist/workroom/index.js', '${manifest.name}/process/constructs-used-by']) {
+        assert.throws(() => require(path), { code: 'ERR_PACKAGE_PATH_NOT_EXPORTED' });
+      }
+    })().catch(error => { console.error(error); process.exitCode = 1; });
+  `;
+  run(process.execPath, ["--input-type=commonjs", "--eval", commonJsProgram], consumer);
   const installed = join(consumer, "node_modules", ...manifest.name.split("/"));
   assert(!(await lstat(installed)).isSymbolicLink(), "Receiver must install actual tarball content");
   for (const name of ["host.ts", "practices.ts", "smoke.ts"]) {
