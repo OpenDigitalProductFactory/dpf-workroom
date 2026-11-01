@@ -20,7 +20,7 @@ See [MIGRATION.md](MIGRATION.md) for the transition and [CONTRIBUTING.md](CONTRI
 
 ## Installed candidate contract
 
-`0.1.0-candidate.3` adds an ESM package build and declarations over the unchanged
+`0.1.0-candidate.4` adds an ESM package build and declarations over the unchanged
 seeded kernel. It remains private and unpublished. `npm run build` emits the
 portable closure into `dist`; `npm pack` builds a local tarball. No DPF checkout,
 application boot, database, provider credential or runtime dependency is needed.
@@ -75,3 +75,5 @@ each exported value with native ESM import identity. Node24’s synchronous ESM
 loading is the supported compatibility path; no second implementation or
 CommonJS bundle is emitted. Domain source/provenance and durable semantics are
 unchanged. Prior candidates remain immutable.
+
+Candidate `0.1.0-candidate.4` adds strict-install admission for Node 24.22.1, the patch used by current DPF CI. Build inputs remain pinned to Node 24.16.0/TypeScript 6.0.3. Qualification runs the clean installed receiver on the exact added patch as well as the prior receiving profile; source, emitted APIs and authority semantics are unchanged. Earlier candidate archives remain immutable. This is synthetic receiving evidence, not product, browser/CSP or OS acceptance.

@@ -1,6 +1,6 @@
 {
   "name": "@opendigitalproductfactory/dpf-workroom",
-  "version": "0.1.0-candidate.3",
+  "version": "0.1.0-candidate.4",
   "private": true,
   "type": "module",
   "types": "./dist/workroom/index.d.ts",
@@ -66,7 +66,7 @@
     "url": "https://github.com/OpenDigitalProductFactory/dpf-workroom.git"
   },
   "engines": {
-    "node": "24.16.0 || 24.22.0"
+    "node": "24.16.0 || 24.22.0 || 24.22.1"
   },
   "scripts": {
     "verify:source": "node scripts/verify-provenance.mjs",

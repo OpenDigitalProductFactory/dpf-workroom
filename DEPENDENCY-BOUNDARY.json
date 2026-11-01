@@ -87,14 +87,15 @@
     "consumerCutover": "not yet delivered; existing DPF/DPF2 copies remain governed by their actual consumer migrations"
   },
   "artifactContract": {
-    "version": "0.1.0-candidate.3",
+    "version": "0.1.0-candidate.4",
     "format": "ESM with declarations",
     "runtimeDependencies": [],
     "publication": "private local candidate only",
     "receivingProof": "npm run test:package installs a built tarball and runs the original synthetic protocol contracts; not product/native acceptance",
     "supportedNodeVersions": [
       "24.16.0",
-      "24.22.0"
+      "24.22.0",
+      "24.22.1"
     ],
     "commonJs": "Node24 synchronous require selects the same emitted ESM files and values; no parallel CommonJS implementation."
   },
