@@ -8,7 +8,18 @@ import { createHash } from "node:crypto";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
-assert.equal(process.version, "v24.16.0", "Use the declared Node toolchain");
+// The build stays pinned to .node-version; receivers may run any patch of that
+// major. The engines range is derived from the pin, so the two cannot drift.
+const buildNode = (await readFile(join(root, ".node-version"), "utf8")).trim();
+assert.match(buildNode, /^\d+\.\d+\.\d+$/, ".node-version pins one exact build toolchain");
+const major = Number(buildNode.split(".")[0]);
+assert.equal(manifest.engines?.node, `>=${buildNode} <${major + 1}`, "Receivers admit the build toolchain's whole major line");
+const version = process.version.slice(1).split(".").map(Number);
+const floor = buildNode.split(".").map(Number);
+const atOrAboveFloor = version[1] > floor[1] || (version[1] === floor[1] && version[2] >= floor[2]);
+const receiveOnly = process.argv.includes("--receive-only");
+if (receiveOnly) assert(version[0] === major && atOrAboveFloor, `Receiving Node ${process.version} is outside ${manifest.engines.node}`);
+else assert.equal(process.version, `v${buildNode}`, "Use the declared Node toolchain");
 assert.equal(manifest.private, true, "Candidate qualification cannot publish a package");
 assert.equal(manifest.exports?.["."]?.import, "./dist/workroom/index.js", "Declare a supported installed ESM entry point");
 assert.equal(manifest.exports?.["."]?.types, "./dist/workroom/index.d.ts", "Declare the installed type contract");

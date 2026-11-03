@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-assert.equal(process.version, "v24.16.0", "Use the declared build toolchain");
+const buildNode = (await readFile(join(root, ".node-version"), "utf8")).trim();
+assert.equal(process.version, `v${buildNode}`, "Use the declared build toolchain");
 const compiler = JSON.parse(await readFile(join(root, "node_modules/typescript/package.json"), "utf8"));
 assert.equal(compiler.version, "6.0.3", "Use the pinned compiler");
 const dist = join(root, "dist");
