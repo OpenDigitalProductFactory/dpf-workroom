@@ -8,7 +8,7 @@ A separate component source home for DPF and the DPF2 Linux business-appliance d
 
 Source: [56f3a5d2d57d](https://github.com/OpenDigitalProductFactory/opendigitalproductfactory/tree/56f3a5d2d57d751eb3ac435dcca4133c5ff46686), merged by [PR #6724](https://github.com/OpenDigitalProductFactory/opendigitalproductfactory/pull/6724). `PROVENANCE.json` pins every imported file to its original Git blob and SHA-256. Apache-2.0 license and original notices are retained; component-specific notice is in `examples/workroom-kernel/NOTICE`.
 
-Use Node **24.16.0**. Run `npm ci --ignore-scripts`, then `npm run check`. The pinned TypeScript **6.0.3** compiler builds and executes the original isolated consumer in a temporary directory. No DPF checkout, database, Docker, provider credential or model inference is needed. [workroom-kernel example](examples/workroom-kernel/README.md) explains its supported semantics and limits. Relative `.ts` imports are emitted with standard extension rewriting.
+Build with Node **24.16.0** (`.node-version`); receivers may use any Node 24 from 24.16.0. Run `npm ci --ignore-scripts`, then `npm run check`. The pinned TypeScript **6.0.3** compiler builds and executes the original isolated consumer in a temporary directory. No DPF checkout, database, Docker, provider credential or model inference is needed. [workroom-kernel example](examples/workroom-kernel/README.md) explains its supported semantics and limits. Relative `.ts` imports are emitted with standard extension rewriting.
 
 No package is published: `private:true` prevents accidental npm publication. Browser/native/professional qualification and useful company outcomes require the actual receiving implementation. Source checks and fixture smoke tests cannot establish them.
 
@@ -45,7 +45,7 @@ symlinks. The check also verifies public-export identity and the complete emitte
 runtime/declaration import closure. The build rewrites declaration import nodes
 to `.js`; original upstream source/provenance remains byte-identical.
 
-Supported build/receiving profile: Node 24.16.0, ESM/NodeNext and TypeScript 6.0.3.
+Supported build profile: Node 24.16.0, ESM/NodeNext and TypeScript 6.0.3. Supported receiving profile: Node `>=24.16.0 <25`.
 Alternate runtimes/compiler versions, browser/native hosts, complete GPP
 schema/compiler behavior and production effects are not qualified here.
 The synthetic host demonstrates contracts; it does not enforce real OS, tenant,
@@ -77,3 +77,5 @@ CommonJS bundle is emitted. Domain source/provenance and durable semantics are
 unchanged. Prior candidates remain immutable.
 
 Candidate `0.1.0-candidate.4` adds strict-install admission for Node 24.22.1, the patch used by current DPF CI. Build inputs remain pinned to Node 24.16.0/TypeScript 6.0.3. Qualification runs the clean installed receiver on the exact added patch as well as the prior receiving profile; source, emitted APIs and authority semantics are unchanged. Earlier candidate archives remain immutable. This is synthetic receiving evidence, not product, browser/CSP or OS acceptance.
+
+Candidate `0.1.0-candidate.5` admits receivers on the whole Node 24 line (`>=24.16.0 <25`) instead of an exact patch list, which made every Node patch release refuse strict installation until a new candidate was cut. The build stays pinned to `.node-version` (24.16.0) and TypeScript 6.0.3, and `check-package` derives the range from that pin so the two cannot drift. CI now also builds on the pin and runs the clean installed receiver (`npm run test:receive`) on the newest Node 24 on every push and weekly, so a breaking patch surfaces here before a consumer meets it. Source, emitted bytes and APIs are unchanged. Earlier candidate archives remain immutable. This is still synthetic receiving evidence, not product, browser/CSP or OS acceptance.

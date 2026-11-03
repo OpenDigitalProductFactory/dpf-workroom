@@ -1,5 +1,12 @@
 name: Component checks
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  # Receivers admit the whole Node major line, so a new patch release must be
+  # exercised here before a consumer's CI meets it.
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -14,3 +21,27 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm run check
+
+  # Build on the pinned toolchain, then install the packed tarball with
+  # --engine-strict and run the installed receiver on the newest patch of the
+  # same major.
+  receive-latest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - name: Resolve the pinned major
+        id: major
+        run: echo "major=$(cut -d. -f1 .node-version)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: ${{ steps.major.outputs.major }}
+          check-latest: true
+      - run: node --version
+      - run: npm run test:receive
